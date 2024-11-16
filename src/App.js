@@ -7,7 +7,9 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        {/* Dashboard should be mapped to "/" */}
         <Route path="/" element={<Dashboard />} />
+        {/* Workout Logs should be mapped to "/logs" */}
         <Route path="/logs" element={<WorkoutLogs />} />
       </Routes>
     </Router>
