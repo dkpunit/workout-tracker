@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Logs() {
   const placeholderData = [
@@ -29,10 +30,30 @@ function Logs() {
       padding: '10px',
       border: '1px solid #DDD',
     },
+    buttonContainer: {
+      marginBottom: '20px',
+    },
+    button: {
+      padding: '10px 20px',
+      fontSize: '16px',
+      backgroundColor: '#007BFF',
+      color: '#FFF',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+    },
+    buttonHover: {
+      backgroundColor: '#0056b3',
+    },
   };
 
   return (
     <div style={styles.container}>
+      <div style={styles.buttonContainer}>
+        <Link to="/">
+          <button style={styles.button}>Back to Dashboard</button>
+        </Link>
+      </div>
       <h1>Workout Logs</h1>
       <table style={styles.table}>
         <thead>
