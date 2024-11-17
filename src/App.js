@@ -6,10 +6,12 @@ import Logs from './routes/Logs';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/logs" element={<Logs />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/logs" element={<Logs />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
