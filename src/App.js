@@ -1,19 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './routes/Dashboard';
-import WorkoutLogs from './routes/WorkoutLogs';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Dashboard from "./Dashboard";
+import Logs from "./Logs";
 
-const App = () => {
+function App() {
   return (
     <Router>
       <Routes>
-        {/* Dashboard should be mapped to "/" */}
+        {/* Default route for the dashboard */}
         <Route path="/" element={<Dashboard />} />
-        {/* Workout Logs should be mapped to "/logs" */}
-        <Route path="/logs" element={<WorkoutLogs />} />
+
+        {/* Route for the logs page */}
+        <Route path="/logs" element={<Logs />} />
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
