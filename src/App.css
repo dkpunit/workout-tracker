@@ -40,6 +40,13 @@ body {
   color: #FFF; /* White on Hover */
 }
 
+/* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  flex-grow: 1;
+  position: relative; /* Ensures proper layering */
+}
+
 /* Main Content */
 .main-content {
   flex-grow: 1;
@@ -51,12 +58,13 @@ body {
 /* Line Separator */
 .main-content::before {
   content: '';
-  width: 2px;
-  background-color: #FFD700; /* Yellow Line Separator */
-  position: absolute;
+  width: 2px; /* Thickness of the yellow line */
+  height: 100vh; /* Full viewport height */
+  background-color: #FFD700; /* Yellow color */
+  position: fixed; /* Ensures the line stays in place */
   top: 0;
-  bottom: 0;
-  left: 200px; /* Match sidebar width */
+  left: 200px; /* Position exactly at the end of the sidebar */
+  z-index: 1; /* Ensures visibility above the background */
 }
 
 /* Buttons */

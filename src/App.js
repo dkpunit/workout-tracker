@@ -13,8 +13,10 @@ function App() {
           <li>Settings</li>
         </ul>
       </div>
-      <div className="main-content">
-        <Dashboard />
+      <div className="content-wrapper">
+        <div className="main-content">
+          <Dashboard />
+        </div>
       </div>
     </div>
   );
