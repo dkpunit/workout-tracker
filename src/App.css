@@ -11,13 +11,11 @@ body {
   height: 100vh;
 }
 
-/* Sidebar */
 .sidebar {
-  width: 200px; /* Adjust sidebar width as needed */
-  min-height: 100vh; /* Ensures sidebar height matches viewport */
-  background-color: #505254; /* Darker Nardo Grey for Sidebar */
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  width: 200px; /* Sidebar width */
+  min-height: 100vh; /* Ensures the sidebar height aligns with the line */
+  background-color: #505254; /* Darker Nardo Grey */
+  position: relative; /* Allows proper alignment with the line */
 }
 
 .sidebar h2 {
@@ -60,12 +58,12 @@ body {
 .main-content::before {
   content: '';
   width: 2px; /* Thickness of the yellow line */
-  height: 100vh; /* Full viewport height */
-  background-color: #FFD700; /* Yellow color */
-  position: fixed; /* Ensures the line stays in place */
-  top: 0;
-  left: 200px; /* Position exactly at the end of the sidebar */
-  z-index: 1; /* Ensures visibility above the background */
+  height: 100vh; /* Full height of the viewport */
+  background-color: #FFD700; /* Yellow line */
+  position: absolute; /* Ensure proper alignment */
+  top: 0; /* Anchor to the top */
+  left: 200px; /* Match sidebar width */
+  z-index: 0; /* Ensure it appears correctly behind text but visible */
 }
 
 /* Buttons */
