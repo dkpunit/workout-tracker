@@ -2,8 +2,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #fff;
+  background-color: #686A6C; /* Nardo Grey */
+  color: #FFD700; /* Yellow Text */
 }
 
 .app-container {
@@ -13,8 +13,8 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 200px; /* Adjust this to make it narrower */
-  background-color: #1e1e1e;
+  width: 200px; /* Adjust sidebar width as needed */
+  background-color: #505254; /* Darker Nardo Grey for Sidebar */
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
@@ -22,6 +22,7 @@ body {
 .sidebar h2 {
   margin: 0 0 20px;
   font-size: 1.5em;
+  color: #FFD700; /* Yellow for Header */
 }
 
 .sidebar ul {
@@ -32,26 +33,43 @@ body {
 .sidebar li {
   margin: 10px 0;
   cursor: pointer;
+  color: #FFD700; /* Yellow for Links */
 }
 
 .sidebar li:hover {
-  color: #ff6b6b;
+  color: #FFF; /* White on Hover */
 }
 
 /* Main Content */
 .main-content {
   flex-grow: 1;
   padding: 20px;
-  background-color: #181818;
+  background-color: #686A6C; /* Nardo Grey for Main Content */
+  color: #FFD700; /* Yellow for Text */
 }
 
 /* Line Separator */
 .main-content::before {
   content: '';
   width: 2px;
-  background-color: #2c2c2c; /* Adjust line color */
+  background-color: #FFD700; /* Yellow Line Separator */
   position: absolute;
   top: 0;
   bottom: 0;
   left: 200px; /* Match sidebar width */
+}
+
+/* Buttons */
+button {
+  background-color: #FFD700; /* Yellow Button */
+  color: #505254; /* Darker Grey for Text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FFC300; /* Slightly darker Yellow on Hover */
+  color: #FFF; /* White Text */
 }
