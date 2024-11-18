@@ -1,24 +1,41 @@
-import React from 'react';
-import './App.css';
-import Dashboard from './routes/Dashboard';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./App.css";
+import LogsPage from "./pages/LogsPage";
+import GoalsPage from "./pages/GoalsPage";
 
 function App() {
   return (
-    <div className="app-container">
-      <div className="sidebar">
-        <h2>Workout Tracker</h2>
-        <ul>
-          <li>Dashboard</li>
-          <li>Logs</li>
-          <li>Settings</li>
-        </ul>
-      </div>
-      <div className="content-wrapper">
+    <Router>
+      <div className="app-container">
+        <div className="sidebar">
+          <h2>Workout Tracker</h2>
+          <ul>
+            <li>
+              <Link to="/logs">Logs</Link>
+            </li>
+            <li>
+              <Link to="/logs">Workout Log</Link>
+            </li>
+            <li className="settings-link">
+              <Link to="/goals">Weekly Goals</Link>
+            </li>
+          </ul>
+          <div className="sidebar-footer">
+            <Link to="/settings">
+              <span className="settings-icon">⚙️</span> Settings
+            </Link>
+          </div>
+        </div>
         <div className="main-content">
-          <Dashboard />
+          <Routes>
+            <Route path="/logs" element={<LogsPage />} />
+            <Route path="/goals" element={<GoalsPage />} />
+            <Route path="/settings" element={<div>Settings Page</div>} />
+          </Routes>
         </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
