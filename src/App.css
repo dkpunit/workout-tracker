@@ -14,6 +14,7 @@ body {
 /* Sidebar */
 .sidebar {
   width: 200px; /* Adjust sidebar width as needed */
+  min-height: 100vh; /* Ensures sidebar height matches viewport */
   background-color: #505254; /* Darker Nardo Grey for Sidebar */
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
