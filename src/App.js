@@ -4,8 +4,18 @@ import Dashboard from './routes/Dashboard';
 
 function App() {
   return (
-    <div>
-      <Dashboard />
+    <div className="app-container">
+      <div className="sidebar">
+        <h2>Workout Tracker</h2>
+        <ul>
+          <li>Dashboard</li>
+          <li>Logs</li>
+          <li>Settings</li>
+        </ul>
+      </div>
+      <div className="main-content">
+        <Dashboard />
+      </div>
     </div>
   );
 }
