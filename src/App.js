@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import LogsPage from "./pages/LogsPage.js";
 import GoalsPage from "./pages/GoalsPage.js";
+import HomePage from "./pages/HomePage.js"; // Import the new HomePage component
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           <h2>Workout Tracker</h2>
           <ul>
             <li>
-              <Link to="/logs">Logs</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/logs">Workout Log</Link>
@@ -29,6 +30,7 @@ function App() {
         </div>
         <div className="main-content">
           <Routes>
+            <Route path="/" element={<HomePage />} /> {/* New HomePage route */}
             <Route path="/logs" element={<LogsPage />} />
             <Route path="/goals" element={<GoalsPage />} />
             <Route path="/settings" element={<div>Settings Page</div>} />
