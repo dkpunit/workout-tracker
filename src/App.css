@@ -60,4 +60,36 @@ body {
   text-align: center;
 }
 
-.settings-ico
+.settings-icon {
+  margin-right: 8px;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  flex-grow: 1;
+  position: relative; /* Ensures proper layering */
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #686A6C; /* Nardo Grey for Main Content */
+  color: #FFF8DC; /* Lighter Yellow for text readability */
+}
+
+/* Buttons */
+button {
+  background-color: #FFD700; /* Yellow Button */
+  color: #333; /* Dark text for contrast */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FFC300; /* Slightly darker Yellow on Hover */
+  color: #FFF; /* White Text on Hover */
+}
