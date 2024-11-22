@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #686A6C; /* Nardo Grey */
-  color: #FFD700; /* Yellow Text */
+  color: #FFF8DC; /* Lighter Yellow (Cornsilk) for better readability */
 }
 
 .app-container {
@@ -30,21 +30,14 @@ body {
   right: 0; /* Align the line to the right edge of the sidebar */
 }
 
-/* Main Content */
-.main-content {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: #686A6C; /* Nardo Grey for Main Content */
-  color: #FFD700; /* Yellow for Text */
-  position: relative; /* Avoid interference with the sidebar */
-}
-
+/* Sidebar Header */
 .sidebar h2 {
   margin: 0 0 20px;
   font-size: 1.5em;
-  color: #FFD700; /* Yellow for Header */
+  color: #FFF8DC; /* Lighter Yellow (Cornsilk) for the header */
 }
 
+/* Sidebar Links */
 .sidebar ul {
   list-style-type: none;
   padding: 0;
@@ -53,41 +46,11 @@ body {
 .sidebar li {
   margin: 10px 0;
   cursor: pointer;
-  color: #FFD700; /* Yellow for Links */
+  color: #FFF8DC; /* Lighter Yellow for links */
 }
 
 .sidebar li:hover {
-  color: #FFF; /* White on Hover */
-}
-
-/* Content Wrapper */
-.content-wrapper {
-  display: flex;
-  flex-grow: 1;
-  position: relative; /* Ensures proper layering */
-}
-
-/* Main Content */
-.main-content {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: #686A6C; /* Nardo Grey for Main Content */
-  color: #FFD700; /* Yellow for Text */
-}
-
-/* Buttons */
-button {
-  background-color: #FFD700; /* Yellow Button */
-  color: #505254; /* Darker Grey for Text */
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #FFC300; /* Slightly darker Yellow on Hover */
-  color: #FFF; /* White Text */
+  color: #FFFFFF; /* White on hover for better contrast */
 }
 
 /* Sidebar Footer (Settings Link) */
@@ -97,6 +60,4 @@ button:hover {
   text-align: center;
 }
 
-.settings-icon {
-  margin-right: 8px;
-}
+.settings-ico
