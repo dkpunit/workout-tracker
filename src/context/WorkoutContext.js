@@ -6,7 +6,7 @@ export const WorkoutProvider = ({ children }) => {
   const [workouts, setWorkouts] = useState([]);
 
   const addWorkout = (workout) => {
-    setWorkouts(prev => [...prevWorkouts, workout]);
+    setWorkouts(prev => [...prev, workout]); // <-- Corrected here!
   };
 
   return (
