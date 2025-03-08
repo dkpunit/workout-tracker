@@ -16,3 +16,12 @@ Thumbs.db
 
 # Environment variables
 .env
+
+# VS Code settings
+.vscode/
+
+# Ignore AffinityCommon files
+AffinityCommon/
+*.lock
+*.dat
+
