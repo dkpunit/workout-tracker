@@ -1,4 +1,4 @@
-
+// src/context/WorkoutContext.js
 import { createContext, useState } from 'react';
 
 export const WorkoutContext = createContext();
