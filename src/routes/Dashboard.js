@@ -1,6 +1,5 @@
 // src/routes/Dashboard.js
 import React, { useContext, useState } from 'react';
-import ExerciseCard from '../components/ExerciseCard';
 import { WorkoutContext } from '../context/WorkoutContext';
 import './Dashboard.css';
 
