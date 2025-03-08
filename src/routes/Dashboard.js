@@ -26,9 +26,6 @@ function Dashboard() {
           <ExerciseCard key={idx} exercise={exercise} />
         ))
       )}
-      <button className="add-workout-btn" onClick={handleAddWorkout}>
-        Add Workout to Logs
-      </button>
     </div>
   );
 }
