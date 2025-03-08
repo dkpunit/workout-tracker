@@ -1,13 +1,12 @@
-// src/context/WorkoutContext.js
 import { createContext, useState } from 'react';
 
 export const WorkoutContext = createContext();
 
 export const WorkoutProvider = ({ children }) => {
-  const [workouts, setWorkouts] = useState([]); // Ensure it's empty initially
+  const [workouts, setWorkouts] = useState([]);
 
   const addWorkout = (workout) => {
-    setWorkouts([...workouts, workout]);
+    setWorkouts(prev => [...prevWorkouts, workout]);
   };
 
   return (
