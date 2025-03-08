@@ -79,3 +79,7 @@ body {
   color: #FFFFFF; /* White for */
 }
 
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+}
