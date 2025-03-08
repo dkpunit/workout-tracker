@@ -8,14 +8,14 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="content-wrapper">
+      <div className="app-container">
         <Sidebar />
         <div className="main-content">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/logs" element={<Logs />} />
             <Route path="/goals" element={<GoalsPage />} />
-          </Routes>   
+          </Routes>
         </div>
       </div>
     </Router>

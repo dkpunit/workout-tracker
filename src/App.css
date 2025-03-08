@@ -1,65 +1,46 @@
-/* App.css - Clean fixed-sidebar layout */
+/* App.css - Final Correct Version for Sidebar and Content Alignment */
 
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #686A6C;
+  box-sizing: border-box;
 }
 
 .app-container {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
 }
 
-/* Sidebar Styles */
 .sidebar {
-  width: 220px;
+  width: 200px;
+  min-height: 100vh;
   background-color: #505254;
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
   padding-top: 20px;
-  position: relative;
 }
 
-/* Yellow Line */
 .sidebar::after {
   content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
   width: 2px;
   height: 100%;
-  background-color: yellow;
+  background-color: #FFD700;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar ul li {
-  margin-bottom: 15px;
-}
-
-.sidebar ul li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-}
-
-.sidebar ul li a:hover {
-  background-color: #686A6C;
-}
-
-/* Content Area Styles */
 .main-content {
-  flex: 1;
-  background-color: #686A6C;
-  overflow-y: auto;
+  margin-left: 200px; /* Exactly the width of your sidebar */
   padding: 20px;
-  box-sizing: border-box;
+  flex-grow: 1;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  background-color: #686A6C;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
 }
