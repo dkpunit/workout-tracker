@@ -1,3 +1,4 @@
+// src/routes/WorkoutLogs.js
 import React, { useContext } from 'react';
 import { WorkoutContext } from '../context/WorkoutContext';
 import './WorkoutLogs.css';
@@ -8,7 +9,7 @@ function WorkoutLogs() {
   return (
     <div className="workout-logs-container">
       <h2>Workout Logs</h2>
-      <table className="workout-logs-table">
+      <table>
         <thead>
           <tr>
             <th>Date</th>
@@ -28,9 +29,9 @@ function WorkoutLogs() {
             workouts.map((log, idx) => (
               <tr key={idx}>
                 <td>{log.date}</td>
-                <td>{log.workout}</td>
-                <td>{log.duration}</td>
-                <td>{log.notes}</td>
+                <td>{log.workoutName || 'Workout'}</td>
+                <td>{log.duration || '-'}</td>
+                <td>{log.notes || '-'}</td>
               </tr>
             ))
           )}
