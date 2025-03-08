@@ -1,36 +1,43 @@
-// src/routes/Dashboard.js
-import React, { useContext, useState } from 'react';
-import ExerciseCard from '../components/ExerciseCard';
+import React, { useContext } from 'react';
 import { WorkoutContext } from '../context/WorkoutContext';
-import './Dashboard.css';
+import './WorkoutLogs.css';
 
-function Dashboard() {
-  const { addWorkout } = useContext(WorkoutContext);
-  const [todaysWorkout, setTodaysWorkout] = useState({
-    date: new Date().toISOString().split('T')[0],
-    exercises: [] // No exercises initially
-  });
-
-  const handleAddWorkout = () => {
-    addWorkout(todaysWorkout);
-    alert('Workout added to logs!');
-  };
+function WorkoutLogs() {
+  const { workouts } = useContext(WorkoutContext);
 
   return (
-    <div className="dashboard">
-      <h1>Today's Workout - {todaysWorkout.date}</h1>
-      {todaysWorkout.exercises.length === 0 ? (
-        <p>No exercises logged for today yet.</p>
-      ) : (
-        todaysWorkout.exercises.map((exercise, idx) => (
-          <ExerciseCard key={idx} exercise={exercise} />
-        ))
-      )}
-      <button className="add-workout-btn" onClick={handleAddWorkout}>
-        Add Workout to Logs
-      </button>
+    <div className="workout-logs-container">
+      <h2>Workout Logs</h2>
+      <table className="workout-logs-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Workout</th>
+            <th>Duration</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          {workouts.length === 0 ? (
+            <tr>
+              <td colSpan="4" style={{ textAlign: 'center' }}>
+                No workout logs available yet.
+              </td>
+            </tr>
+          ) : (
+            workouts.map((log, idx) => (
+              <tr key={idx}>
+                <td>{log.date}</td>
+                <td>{log.workout}</td>
+                <td>{log.duration}</td>
+                <td>{log.notes}</td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
     </div>
   );
 }
 
-export default Dashboard;
+export default WorkoutLogs;
