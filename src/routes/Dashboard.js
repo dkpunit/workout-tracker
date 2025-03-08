@@ -1,21 +1,41 @@
-import React from 'react';
+// src/routes/Dashboard.js
+import React, { useContext } from 'react';
+import ExerciseCard from '../components/ExerciseCard';
+import { WorkoutContext } from '../context/WorkoutContext';
+import './Dashboard.css';
 
 function Dashboard() {
+  const { workouts } = useContext(WorkoutContext);
+
+  // Example data structure for today's workout (you can fetch or context-manage this)
+  const todaysWorkout = workouts[0] || {
+    date: '2025-03-08',
+    exercises: [
+      {
+        name: 'Bench Press',
+        sets: [
+          { reps: 10, weight: 135, notes: '' },
+          { reps: 8, weight: 155, notes: '' },
+          { reps: 6, weight: 175, notes: '' }
+        ]
+      },
+      {
+        name: 'Squats',
+        sets: [
+          { reps: 10, weight: 185, notes: '' },
+          { reps: 8, weight: 205, notes: '' },
+          { reps: 6, weight: 225, notes: '' }
+        ]
+      }
+    ]
+  };
+
   return (
-    <div className="dashboard-container">
-      <h1>Dashboard</h1>
-
-      <div className="card">
-        <h2>Workout Summary</h2>
-        <p>You haven't logged a workout yet.</p>
-        <button>Log Workout</button>
-      </div>
-
-      <div className="card">
-        <h2>Weekly Goals</h2>
-        <p>Set your weekly fitness goals.</p>
-        <button>Set Goals</button>
-      </div>
+    <div className="dashboard">
+      <h1>Today's Workout - {todaysWorkout.date}</h1>
+      {todaysWorkout.exercises.map((exercise, idx) => (
+        <ExerciseCard key={idx} exercise={exercise} />
+      ))}
     </div>
   );
 }
