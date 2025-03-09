@@ -68,7 +68,7 @@
 
 /* Fix Facebook icon offset */
 .facebook-btn img {
-  margin-left: -4px; /* Moves the icon slightly to the right */
+  margin-left: -10px; /* Moves the icon slightly to the right */
 }
 
 .google-btn:hover {
