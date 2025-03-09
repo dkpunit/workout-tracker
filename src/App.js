@@ -1,20 +1,25 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './routes/Dashboard';
-import Logs from './routes/Logs';
-import GoalsPage from './pages/GoalsPage';
-import Sidebar from './components/Sidebar';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./firebase";
+import Welcome from "./pages/Welcome";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import WorkoutLogs from "./pages/WorkoutLogs";
+import Sidebar from "./components/Sidebar";
 
 function App() {
+  const [user] = useAuthState(auth);
+
   return (
     <Router>
       <div className="app-container">
-        <Sidebar />
+        {user && <Sidebar />}
         <div className="main-content">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/logs" element={<Logs />} />
-            <Route path="/goals" element={<GoalsPage />} />
+            <Route path="/" element={!user ? <Welcome /> : <Navigate to="/dashboard" />} />
+            <Route path="/login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
+            <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
+            <Route path="/logs" element={user ? <WorkoutLogs /> : <Navigate to="/login" />} />
           </Routes>
         </div>
       </div>
