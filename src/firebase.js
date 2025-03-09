@@ -3,11 +3,11 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import { getFirestore, collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
-// ✅ Debugging - Check if environment variables are loaded correctly
-console.log("Firebase API Key:", process.env.REACT_APP_FIREBASE_API_KEY);
-console.log("Firebase Auth Domain:", process.env.REACT_APP_FIREBASE_AUTH_DOMAIN);
+// ✅ Debugging - Ensure environment variables are loaded correctly
+console.log("Firebase API Key:", process.env.REACT_APP_FIREBASE_API_KEY ? "Loaded" : "NOT LOADED");
+console.log("Firebase Auth Domain:", process.env.REACT_APP_FIREBASE_AUTH_DOMAIN ? "Loaded" : "NOT LOADED");
 
-// ✅ Secure Firebase Config with Environment Variables
+// ✅ Secure Firebase Configuration using Environment Variables
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -15,7 +15,7 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL, // ✅ Ensure this is set in Netlify
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL, // ✅ Ensure this is set in Netlify if needed
 };
 
 // ✅ Initialize Firebase
@@ -23,7 +23,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// ✅ Set up Google & Facebook Authentication Providers
+// ✅ Configure Google & Facebook Authentication Providers
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 
@@ -43,6 +43,7 @@ const saveWorkout = async (userId, date, exercises) => {
       exercises,
       createdAt: new Date(),
     });
+    console.log("Workout saved successfully!");
   } catch (error) {
     console.error("Error saving workout:", error);
   }
