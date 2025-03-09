@@ -3,13 +3,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import { getFirestore, collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
+// Secure Firebase Config using Environment Variables
 const firebaseConfig = {
-  apiKey: "AIzaSyAMGeHQ5dyRmYPrP8N2Ddh4cDRnrmHMKtE",
-  authDomain: "workout-tracker-13140.firebaseapp.com",
-  projectId: "workout-tracker-13140",
-  storageBucket: "workout-tracker-13140.firebasestorage.app",
-  messagingSenderId: "800068857292",
-  appId: "1:800068857292:web:4d1706a95d7cc527b78169"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
@@ -17,10 +18,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+// Set up Google & Facebook Authentication Providers
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 
-// Firestore Workout Collection Reference
+// Enforce Pop-up Authentication to Fix Redirect Issues
+googleProvider.setCustomParameters({ prompt: "select_account" });
+facebookProvider.setCustomParameters({ display: "popup" });
+
+// Firestore Collection Reference
 const workoutsCollection = collection(db, "workouts");
 
 // Function to Save Workouts to Firestore
@@ -30,7 +36,7 @@ const saveWorkout = async (userId, date, exercises) => {
       userId,
       date,
       exercises,
-      createdAt: new Date()
+      createdAt: new Date(),
     });
   } catch (error) {
     console.error("Error saving workout:", error);
@@ -42,11 +48,12 @@ const getUserWorkouts = async (userId) => {
   try {
     const q = query(workoutsCollection, where("userId", "==", userId));
     const snapshot = await getDocs(q);
-    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   } catch (error) {
     console.error("Error fetching workouts:", error);
     return [];
   }
 };
 
+// Export Firebase Functions
 export { auth, googleProvider, facebookProvider, db, saveWorkout, getUserWorkouts };
