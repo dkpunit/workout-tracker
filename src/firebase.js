@@ -3,7 +3,11 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import { getFirestore, collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
-// Secure Firebase Config using Environment Variables
+// ✅ Debugging - Check if environment variables are loaded correctly
+console.log("Firebase API Key:", process.env.REACT_APP_FIREBASE_API_KEY);
+console.log("Firebase Auth Domain:", process.env.REACT_APP_FIREBASE_AUTH_DOMAIN);
+
+// ✅ Secure Firebase Config with Environment Variables
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -11,25 +15,26 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL, // ✅ Ensure this is set in Netlify
 };
 
-// Initialize Firebase
+// ✅ Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Set up Google & Facebook Authentication Providers
+// ✅ Set up Google & Facebook Authentication Providers
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 
-// Enforce Pop-up Authentication to Fix Redirect Issues
+// ✅ Enforce pop-up authentication (Fixes redirect issues)
 googleProvider.setCustomParameters({ prompt: "select_account" });
 facebookProvider.setCustomParameters({ display: "popup" });
 
-// Firestore Collection Reference
+// ✅ Firestore Collection Reference
 const workoutsCollection = collection(db, "workouts");
 
-// Function to Save Workouts to Firestore
+// ✅ Function to Save Workouts to Firestore
 const saveWorkout = async (userId, date, exercises) => {
   try {
     await addDoc(workoutsCollection, {
@@ -43,7 +48,7 @@ const saveWorkout = async (userId, date, exercises) => {
   }
 };
 
-// Function to Fetch Workouts for a User
+// ✅ Function to Fetch Workouts for a User
 const getUserWorkouts = async (userId) => {
   try {
     const q = query(workoutsCollection, where("userId", "==", userId));
@@ -55,5 +60,5 @@ const getUserWorkouts = async (userId) => {
   }
 };
 
-// Export Firebase Functions
+// ✅ Export Firebase Functions
 export { auth, googleProvider, facebookProvider, db, saveWorkout, getUserWorkouts };
