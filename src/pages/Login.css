@@ -1,5 +1,4 @@
 /* src/pages/Login.css */
-
 .login-container {
   display: flex;
   justify-content: center;
@@ -44,34 +43,32 @@
   font-weight: bold;
   transition: 0.3s ease-in-out;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  gap: 12px; /* Spacing between icon and text */
-  text-align: center;
-}
-
-/* Fix Button Size & Padding */
-.google-btn, .facebook-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 15px; /* Same padding for both */
-  width: 100%;
+  gap: 10px; /* Ensures spacing between logo and text */
 }
 
 /* Logo Size & Alignment */
 .social-login-btn img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   margin-right: 10px;
-  object-fit: contain; /* Ensures the icon is properly contained */
-  display: inline-block;
+}
+
+/* Adjust Facebook button alignment */
+.facebook-btn {
+  border: 1px solid #3b5998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
 }
 
 .google-btn {
   border: 1px solid #4285F4;
 }
 
-.facebook-btn {
-  border: 1px solid #3b5998;
+/* Fix Facebook icon offset */
+.facebook-btn img {
+  margin-left: -4px; /* Moves the icon slightly to the right */
 }
 
 .google-btn:hover {
@@ -136,15 +133,4 @@ input::placeholder {
 
 .toggle-text:hover {
   color: white;
-}
-
-/* Responsive Fix for Small Screens */
-@media (max-width: 480px) {
-  .social-login-btn {
-    flex-direction: row; /* Keeps icon & text side by side */
-  }
-
-  .google-btn, .facebook-btn {
-    min-width: 100%; /* Full-width buttons on mobile */
-  }
 }
