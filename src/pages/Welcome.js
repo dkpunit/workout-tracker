@@ -9,8 +9,8 @@ function Welcome() {
   return (
     <div className="welcome-container">
       <div className="welcome-box">
-        {/* Logo (using public/ folder reference) */}
-        <img src="/welcomelogo.jpg" alt="Hercules Workout Tracker" className="welcome-logo" />
+        {/* Logo (commented out for now) */}
+        {/* <img src="/welcomelogo.jpg" alt="Hercules Workout Tracker" className="welcome-logo" /> */}
 
         {/* Title & Subtitle */}
         <h1 className="welcome-title">HERCULES</h1>
@@ -26,7 +26,7 @@ function Welcome() {
           Sign In
         </button>
 
-        {/* Learn More Link - Updated to point to /about-tracker */}
+        {/* Learn More Link */}
         <a href="/about-tracker" className="learn-more-link">Learn More</a>
       </div>
     </div>
