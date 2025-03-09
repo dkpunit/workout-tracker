@@ -26,8 +26,8 @@ function Welcome() {
           Sign In
         </button>
 
-        {/* Learn More Link */}
-        <a href="/learn-more" className="learn-more-link">Learn More</a>
+        {/* Learn More Link - Updated to point to /about-tracker */}
+        <a href="/about-tracker" className="learn-more-link">Learn More</a>
       </div>
     </div>
   );
