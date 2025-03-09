@@ -2,6 +2,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Welcome.css";
+import welcomelogo from "../assets/welcomelogo.jpg"; // Ensure correct path
 
 function Welcome() {
   const navigate = useNavigate();
@@ -9,12 +10,25 @@ function Welcome() {
   return (
     <div className="welcome-container">
       <div className="welcome-box">
-        <h1>Workout Tracker</h1>
-        <p>Welcome!</p>
+        {/* Logo */}
+        <img src={welcomelogo} alt="Hercules Workout Tracker" className="welcome-logo" />
+
+        {/* Title & Subtitle */}
+        <h1 className="welcome-title">HERCULES</h1>
+        <p className="welcome-subtitle">Workout Tracker</p>
+
+        {/* Welcome Message */}
+        <p className="welcome-message">
+          Welcome to the Hercules Workout Tracker! Log your workouts, track progress, and stay consistent.
+        </p>
+
+        {/* Sign-In Button */}
         <button className="sign-in-btn" onClick={() => navigate("/login")}>
           Sign In
         </button>
-        <a href="/learn-more">Learn More</a>
+
+        {/* Learn More Link */}
+        <a href="/learn-more" className="learn-more-link">Learn More</a>
       </div>
     </div>
   );
