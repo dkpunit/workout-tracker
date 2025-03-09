@@ -1,4 +1,5 @@
 /* src/pages/Login.css */
+
 .login-container {
   display: flex;
   justify-content: center;
@@ -43,12 +44,23 @@
   font-weight: bold;
   transition: 0.3s ease-in-out;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  gap: 10px; /* Ensures spacing between logo and text */
 }
 
+/* Fix Button Size & Padding */
+.google-btn, .facebook-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 15px;
+  min-width: 280px; /* Ensures consistent width */
+}
+
+/* Logo Size & Alignment */
 .social-login-btn img {
   width: 24px;
   height: 24px;
-  margin-right: 12px;
+  margin-right: 10px;
 }
 
 .google-btn {
@@ -69,11 +81,16 @@
   transform: scale(1.05);
 }
 
-/* Divider */
+/* Divider with Hover Effect */
 .divider {
   width: 100%;
   border-top: 1px solid #666;
   margin: 20px 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.divider:hover {
+  opacity: 0.7;
 }
 
 /* Email & Password Fields */
@@ -121,4 +138,15 @@ input::placeholder {
 
 .toggle-text:hover {
   color: white;
+}
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 480px) {
+  .social-login-btn {
+    flex-direction: row; /* Keeps icon & text side by side */
+  }
+
+  .google-btn, .facebook-btn {
+    min-width: 100%; /* Full-width buttons on mobile */
+  }
 }
