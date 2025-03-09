@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useEffect } from "react"; // Import useEffect
 import { auth } from "./firebase";
 import Welcome from "./pages/Welcome";
 import Login from "./pages/Login";
@@ -10,6 +11,11 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   const [user] = useAuthState(auth);
+
+  // Ensure tab title is updated
+  useEffect(() => {
+    document.title = "Project Hercules";
+  }, []);
 
   return (
     <Router>
