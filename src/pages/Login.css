@@ -44,7 +44,8 @@
   font-weight: bold;
   transition: 0.3s ease-in-out;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  gap: 10px; /* Ensures spacing between logo and text */
+  gap: 12px; /* Spacing between icon and text */
+  text-align: center;
 }
 
 /* Fix Button Size & Padding */
@@ -52,15 +53,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 15px;
-  min-width: 280px; /* Ensures consistent width */
+  padding: 12px 15px; /* Same padding for both */
+  width: 100%;
 }
 
 /* Logo Size & Alignment */
 .social-login-btn img {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   margin-right: 10px;
+  object-fit: contain; /* Ensures the icon is properly contained */
+  display: inline-block;
 }
 
 .google-btn {
@@ -81,16 +84,11 @@
   transform: scale(1.05);
 }
 
-/* Divider with Hover Effect */
+/* Divider */
 .divider {
   width: 100%;
   border-top: 1px solid #666;
   margin: 20px 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.divider:hover {
-  opacity: 0.7;
 }
 
 /* Email & Password Fields */
