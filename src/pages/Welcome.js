@@ -2,7 +2,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Welcome.css";
-import welcomelogo from "../assets/welcomelogo.jpg"; // Ensure correct path
 
 function Welcome() {
   const navigate = useNavigate();
@@ -10,8 +9,8 @@ function Welcome() {
   return (
     <div className="welcome-container">
       <div className="welcome-box">
-        {/* Logo */}
-        <img src={welcomelogo} alt="Hercules Workout Tracker" className="welcome-logo" />
+        {/* Logo (using public/ folder reference) */}
+        <img src="/welcomelogo.jpg" alt="Hercules Workout Tracker" className="welcome-logo" />
 
         {/* Title & Subtitle */}
         <h1 className="welcome-title">HERCULES</h1>
