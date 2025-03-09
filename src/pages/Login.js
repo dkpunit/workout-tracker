@@ -4,8 +4,8 @@ import { auth, googleProvider, facebookProvider } from "../firebase";
 import { signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import googleLogo from "../assets/google-logo.png";  // Ensure this exists in /assets
-import facebookLogo from "../assets/facebook-logo.png";  // Ensure this exists in /assets
+import googleLogo from "../assets/google-logo.png"; // Ensure this exists in /assets
+import facebookLogo from "../assets/facebook-logo.png"; // Ensure this exists in /assets
 
 function Login() {
   const [email, setEmail] = useState("");
