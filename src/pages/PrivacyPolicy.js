@@ -10,7 +10,7 @@ function PrivacyPolicy() {
     <div className="privacy-container">
       <div className="privacy-box">
         <h1 className="privacy-title">Privacy Policy</h1>
-        <p className="privacy-date">Effective Date: [MARCH 10TH, 2025]</p>
+        <p className="privacy-date">Effective Date: MARCH 10TH, 2025</p>
 
         <h2>1. Introduction</h2>
         <p>Welcome to <strong>Project Hercules</strong> ("we," "our," or "us"). This privacy policy explains how we collect, use, and protect your personal information when you use our workout tracking application.</p>
@@ -30,12 +30,6 @@ function PrivacyPolicy() {
 
         <h2>5. Your Rights</h2>
         <p>You can request to access, update, or delete your account data anytime.</p>
-
-        <h2>6. Contact Us</h2>
-        <p>If you have any questions, contact us at: <br/>
-        📧 **Email:** [Your Email] <br/>
-        🌍 **Website:** [Your Website URL]
-        </p>
 
         <button className="back-btn" onClick={() => navigate(-1)}>Go Back</button>
       </div>
