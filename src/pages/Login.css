@@ -118,6 +118,15 @@ input::placeholder {
   transition: 0.3s;
 }
 
+/* Sign-In Button Disabled (When No Input) */
+.email-login-btn:disabled,
+.email-login-btn.disabled {
+  background-color: #555 !important; /* Dark gray */
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Sign-In Button Hover */
 .email-login-btn:hover {
   background-color: darkred;
   transform: scale(1.05);
@@ -133,4 +142,26 @@ input::placeholder {
 
 .toggle-text:hover {
   color: white;
+}
+
+/* ✅ Privacy Policy & Terms of Service Links */
+.privacy-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.privacy-link {
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
+}
+
+/* Ensure visited links stay red */
+.privacy-link:visited {
+  color: red;
 }

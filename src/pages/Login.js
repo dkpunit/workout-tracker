@@ -26,6 +26,7 @@ function Login() {
 
   // Email & Password Authentication
   const handleEmailAuth = async () => {
+    if (!email || !password) return; // Prevent signing in if fields are empty
     try {
       if (isSignUp) {
         await createUserWithEmailAndPassword(auth, email, password);
@@ -75,7 +76,12 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)} 
         />
 
-        <button className="email-login-btn" onClick={handleEmailAuth}>
+        {/* Sign-in Button (Disabled until email & password are entered) */}
+        <button 
+          className={`email-login-btn ${email && password ? "" : "disabled"}`} 
+          onClick={handleEmailAuth} 
+          disabled={!email || !password} // Disable when fields are empty
+        >
           {isSignUp ? "Sign Up" : "Sign In"}
         </button>
 
@@ -84,9 +90,9 @@ function Login() {
           {isSignUp ? "Already have an account? Sign in" : "Don't have an account? Sign up"}
         </p>
 
-        {/* ✅ Privacy Policy Link */}
+        {/* ✅ Privacy Policy & Terms of Service Links */}
         <p className="privacy-text">
-          By signing in, you agree to our <a href="/privacy-policy" className="privacy-link">Privacy Policy</a>.
+          By signing in, you agree to our <a href="/privacy-policy" className="privacy-link">Privacy Policy</a> and <a href="/terms-of-service" className="privacy-link">Terms of Service</a>.
         </p>
       </div>
     </div>
