@@ -9,9 +9,6 @@ function Welcome() {
   return (
     <div className="welcome-container">
       <div className="welcome-box">
-        {/* Logo (commented out for now) */}
-        {/* <img src="/welcomelogo.jpg" alt="Hercules Workout Tracker" className="welcome-logo" /> */}
-
         {/* Title & Subtitle */}
         <h1 className="welcome-title">HERCULES</h1>
         <p className="welcome-subtitle">Workout Tracker</p>
@@ -28,6 +25,9 @@ function Welcome() {
 
         {/* Learn More Link */}
         <a href="/about-tracker" className="learn-more-link">Learn More</a>
+
+        {/* ✅ Version Number */}
+        <p className="version-text">Version 1.0.0</p>
       </div>
     </div>
   );
