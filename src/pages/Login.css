@@ -31,7 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative; /* Allows absolute positioning of icon */
+  position: relative;
   width: 100%;
   background-color: white;
   color: black;
@@ -52,7 +52,7 @@
   width: 24px;
   height: 24px;
   position: absolute;
-  left: 12px; /* Ensures icons are positioned consistently */
+  left: 12px;
 }
 
 /* Text inside button */
@@ -88,9 +88,13 @@
   margin: 20px 0;
 }
 
-/* Email & Password Fields */
-input {
+/* Email & Password Fields (Updated Alignment) */
+.input-container {
   width: 100%;
+}
+
+input {
+  width: calc(100% - 24px); /* Adjusts width to match buttons */
   padding: 12px;
   margin-bottom: 12px;
   border: none;
@@ -98,6 +102,9 @@ input {
   font-size: 14px;
   background-color: #444;
   color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 input::placeholder {
@@ -121,7 +128,7 @@ input::placeholder {
 /* Sign-In Button Disabled (When No Input) */
 .email-login-btn:disabled,
 .email-login-btn.disabled {
-  background-color: #555 !important; /* Dark gray */
+  background-color: #555 !important;
   cursor: not-allowed;
   opacity: 0.6;
 }
