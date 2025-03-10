@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import WorkoutLogs from "./pages/WorkoutLogs";
 import AboutTracker from "./pages/AboutTracker"; // Import new About Tracker page
+import PrivacyPolicy from "./pages/PrivacyPolicy"; // ✅ Import Privacy Policy page
 import Sidebar from "./components/Sidebar";
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
             <Route path="/login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
             <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
             <Route path="/logs" element={user ? <WorkoutLogs /> : <Navigate to="/login" />} />
-            <Route path="/about-tracker" element={<AboutTracker />} /> {/* New route for Learn More page */}
+            <Route path="/about-tracker" element={<AboutTracker />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* ✅ New route */}
           </Routes>
         </div>
       </div>

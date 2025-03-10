@@ -1,4 +1,3 @@
-// src/pages/Login.js
 import React, { useState } from "react";
 import { auth, googleProvider, facebookProvider } from "../firebase";
 import { signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
@@ -11,6 +10,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   // Sign in with Google or Facebook
@@ -20,6 +20,7 @@ function Login() {
       navigate("/dashboard");
     } catch (error) {
       console.error("Authentication Error:", error.message);
+      setErrorMessage(error.message);
     }
   };
 
@@ -34,6 +35,7 @@ function Login() {
       navigate("/dashboard");
     } catch (error) {
       console.error("Email Authentication Error:", error.message);
+      setErrorMessage(error.message);
     }
   };
 
@@ -54,6 +56,9 @@ function Login() {
         </button>
 
         <hr className="divider" />
+
+        {/* Display Error Messages */}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
 
         {/* Email/Password Login */}
         <input 
@@ -77,6 +82,11 @@ function Login() {
         {/* Toggle Sign-Up / Sign-In */}
         <p className="toggle-text" onClick={() => setIsSignUp(!isSignUp)}>
           {isSignUp ? "Already have an account? Sign in" : "Don't have an account? Sign up"}
+        </p>
+
+        {/* ✅ Privacy Policy Link */}
+        <p className="privacy-text">
+          By signing in, you agree to our <a href="/privacy-policy" className="privacy-link">Privacy Policy</a>.
         </p>
       </div>
     </div>
