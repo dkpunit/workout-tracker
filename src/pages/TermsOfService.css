@@ -3,11 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* ✅ Prevents layout issues */
     background-color: #111;
-  }
-  
-  .terms-box {
+    overflow-y: auto; /* ✅ Enables scrolling */
+    padding: 20px; /* ✅ Prevents content from touching edges */
+}
+
+.terms-box {
     background-color: #222;
     padding: 40px;
     border-radius: 8px;
@@ -16,7 +18,7 @@
     color: white;
     max-width: 600px;
     width: 100%;
-  }
+}
   
   .terms-title {
     font-size: 26px;
