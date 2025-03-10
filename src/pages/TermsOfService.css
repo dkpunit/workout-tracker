@@ -1,0 +1,77 @@
+/* src/pages/TermsOfService.css */
+.terms-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111;
+  }
+  
+  .terms-box {
+    background-color: #222;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    color: white;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .terms-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: red;
+  }
+  
+  .terms-date {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #bbb;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    color: red;
+  }
+  
+  p, li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ddd;
+  }
+  
+  /* Hyperlink Styling */
+  .terms-link {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .terms-link:hover {
+    text-decoration: underline;
+  }
+  
+  .terms-link:visited {
+    color: red;
+  }
+  
+  /* Back Button */
+  .back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .back-btn:hover {
+    background-color: darkred;
+  }
+  

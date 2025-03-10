@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import WorkoutLogs from "./pages/WorkoutLogs";
 import AboutTracker from "./pages/AboutTracker"; // Import new About Tracker page
 import PrivacyPolicy from "./pages/PrivacyPolicy"; // ✅ Import Privacy Policy page
+import TermsOfService from "./pages/TermsOfService"; // ✅ Import Terms of Service Page
 import Sidebar from "./components/Sidebar";
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
             <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
             <Route path="/logs" element={user ? <WorkoutLogs /> : <Navigate to="/login" />} />
             <Route path="/about-tracker" element={<AboutTracker />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* ✅ New route */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* ✅ Existing Privacy Policy */}
+            <Route path="/terms-of-service" element={<TermsOfService />} /> {/* ✅ New Route */}
           </Routes>
         </div>
       </div>
