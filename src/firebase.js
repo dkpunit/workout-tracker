@@ -10,7 +10,7 @@ console.log("Firebase Auth Domain:", process.env.REACT_APP_FIREBASE_AUTH_DOMAIN 
 // ✅ Secure Firebase Configuration using Environment Variables
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY, 
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  authDomain: "davepunit.com", // ✅ Ensure this matches your custom domain
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
@@ -42,9 +42,9 @@ const saveWorkout = async (userId, date, exercises) => {
       exercises,
       createdAt: new Date(),
     });
-    console.log("Workout saved successfully!");
+    console.log("✅ Workout saved successfully!");
   } catch (error) {
-    console.error("Error saving workout:", error);
+    console.error("❌ Error saving workout:", error);
   }
 };
 
@@ -55,7 +55,7 @@ const getUserWorkouts = async (userId) => {
     const snapshot = await getDocs(q);
     return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   } catch (error) {
-    console.error("Error fetching workouts:", error);
+    console.error("❌ Error fetching workouts:", error);
     return [];
   }
 };
