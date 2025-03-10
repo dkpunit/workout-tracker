@@ -1,78 +1,3 @@
-/* src/pages/PrivacyPolicy.css */
-.privacy-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #111;
-}
-
-.privacy-box {
-  background-color: #222;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  text-align: left;
-  color: white;
-  max-width: 600px;
-  width: 100%;
-}
-
-.privacy-title {
-  font-size: 26px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: red;
-}
-
-.privacy-date {
-  font-size: 14px;
-  margin-bottom: 20px;
-  color: #bbb;
-}
-
-h2 {
-  font-size: 20px;
-  margin-top: 20px;
-  color: red;
-}
-
-p, li {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #ddd;
-}
-
-/* Remove red background from Section 2 */
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
-  background: none; /* Remove red background */
-  border-left: 4px solid red;
-  padding: 8px 15px;
-  margin-bottom: 10px;
-}
-
-/* Back Button */
-.back-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: red;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.back-btn:hover {
-  background-color: darkred;
-}
-/* src/pages/PrivacyPolicy.css */
 .privacy-container {
     display: flex;
     justify-content: center;
@@ -117,6 +42,16 @@ ul li {
     color: #ddd;
   }
   
+  /* Style for hyperlinks inside privacy-box */
+  .privacy-box a {
+    color: red;
+    text-decoration: none; /* Optional */
+  }
+  
+  .privacy-box a:hover {
+    color: darkred; /* Optional */
+  }
+  
   /* Remove red background from Section 2 */
   ul {
     list-style: none;
@@ -146,4 +81,3 @@ ul li {
   .back-btn:hover {
     background-color: darkred;
   }
-  
