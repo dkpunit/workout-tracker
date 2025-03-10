@@ -10,7 +10,7 @@ function PrivacyPolicy() {
     <div className="privacy-container">
       <div className="privacy-box">
         <h1 className="privacy-title">Privacy Policy</h1>
-        <p className="privacy-date">Effective Date: [Insert Date]</p>
+        <p className="privacy-date">Effective Date: [MARCH 10TH, 2025]</p>
 
         <h2>1. Introduction</h2>
         <p>Welcome to <strong>Project Hercules</strong> ("we," "our," or "us"). This privacy policy explains how we collect, use, and protect your personal information when you use our workout tracking application.</p>
