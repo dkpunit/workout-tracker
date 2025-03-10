@@ -1,12 +1,13 @@
+/* src/pages/PrivacyPolicy.css */
 .privacy-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #111;
-  }
+}
   
-  .privacy-box {
+.privacy-box {
     background-color: #222;
     padding: 40px;
     border-radius: 8px;
@@ -15,58 +16,63 @@
     color: white;
     max-width: 600px;
     width: 100%;
-  }
+}
   
-  .privacy-title {
+.privacy-title {
     font-size: 26px;
     font-weight: bold;
     margin-bottom: 10px;
     color: red;
-  }
+}
   
-  .privacy-date {
+.privacy-date {
     font-size: 14px;
     margin-bottom: 20px;
     color: #bbb;
-  }
+}
   
-  h2 {
+h2 {
     font-size: 20px;
     margin-top: 20px;
     color: red;
-  }
+}
   
-  p, li {
+p, li {
     font-size: 16px;
     line-height: 1.6;
     color: #ddd;
-  }
+}
   
-  /* Style for hyperlinks inside privacy-box */
-  .privacy-box a {
-    color: red;
-    text-decoration: none; /* Optional */
-  }
-  
-  .privacy-box a:hover {
-    color: darkred; /* Optional */
-  }
-  
-  /* Remove red background from Section 2 */
-  ul {
+/* Remove red background from Section 2 */
+ul {
     list-style: none;
     padding: 0;
-  }
+}
   
-  ul li {
+ul li {
     background: none; /* Remove red background */
     border-left: 4px solid red;
     padding: 8px 15px;
     margin-bottom: 10px;
-  }
-  
-  /* Back Button */
-  .back-btn {
+}
+
+/* Privacy Policy Hyperlink */
+a {
+    color: red; /* Default red before clicking */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: purple; /* Changes to purple after clicking */
+}
+
+/* Back Button */
+.back-btn {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: red;
@@ -76,8 +82,8 @@
     border-radius: 5px;
     font-weight: bold;
     transition: 0.3s;
-  }
-  
-  .back-btn:hover {
+}
+
+.back-btn:hover {
     background-color: darkred;
-  }
+}
