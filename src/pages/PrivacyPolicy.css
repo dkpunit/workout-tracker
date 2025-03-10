@@ -1,11 +1,13 @@
 /* src/pages/PrivacyPolicy.css */
+
 .privacy-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #222;
     color: white;
+    padding: 20px;
   }
   
   .privacy-box {
@@ -13,69 +15,58 @@
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    text-align: left;
-    max-width: 600px;
+    max-width: 700px;
     width: 100%;
+    text-align: left;
   }
   
-  .privacy-title {
-    font-size: 26px;
-    font-weight: bold;
+  .privacy-box h1 {
     color: red;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  
-  .privacy-date {
-    font-size: 14px;
-    text-align: center;
-    color: #bbb;
+    font-size: 26px;
     margin-bottom: 20px;
   }
   
-  h2 {
-    color: red;
-    margin-top: 15px;
-  }
-  
-  p {
-    font-size: 14px;
-    color: #ddd;
-    line-height: 1.5;
-  }
-  
-  .back-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.3s;
+  .privacy-box h2 {
+    color: #f54;
+    font-size: 20px;
     margin-top: 20px;
   }
   
-  .back-btn:hover {
-    background-color: darkred;
+  .privacy-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
   }
   
-  .privacy-text {
-    font-size: 12px;
-    color: #bbb;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .privacy-link {
-    color: red;
+  .privacy-box a {
+    color: #4285F4;
     text-decoration: none;
+  }
+  
+  .privacy-box a:hover {
+    text-decoration: underline;
+  }
+  
+  .privacy-box .highlight {
+    background-color: rgba(255, 0, 0, 0.2); /* Light red background */
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .back-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
     font-weight: bold;
   }
   
-  .privacy-link:hover {
-    text-decoration: underline;
+  .back-button:hover {
+    background-color: darkred;
   }
   

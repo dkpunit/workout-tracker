@@ -1,7 +1,7 @@
 // src/pages/PrivacyPolicy.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import "./PrivacyPolicy.css";
+import "./PrivacyPolicy.css";
 
 function PrivacyPolicy() {
   const navigate = useNavigate();
